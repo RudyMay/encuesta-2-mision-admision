@@ -320,6 +320,31 @@ input[type="checkbox"]:checked+label div{ background:#D092F9; }
     }
 
 }
+@media screen and (min-width: 767px) and (max-width: 1022px){
+ .radio-btn{
+     width: 160px;
+ }
+    #logoMa1{
+      margin-top:    425px;
+    }
+
+    #logoMa2{
+        margin-top: 1000px !important;
+    }
+
+    #section6 .radio-btn{
+        width: 100px !important;
+    }
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1445px){
+    #logoMa2{
+        margin-top: 400px !important;
+    }
+    #logoMa1{
+        margin-top: 400px !important;
+    }
+}
 
 
 

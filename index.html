@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Encuesta mision admisión</title>
+    <link rel="stylesheet" href="encuesta2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Poppins&display=swap" rel="stylesheet">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <script>
+
+        function IrSeccion2() {
+            document.getElementById('section2').scrollIntoView()
+        }
+
+        function scrolling(idsection, idsection2) {
+            var sectionTarget = document.getElementById(idsection)
+            var contador = 0;
+
+            if (sectionTarget.getElementsByTagName('input').length > 0) {
+                for (let i = 0; i < sectionTarget.getElementsByTagName('input').length; i++) {
+                    if (sectionTarget.getElementsByTagName('input')[i].checked) {
+                        contador++
+                    }
+
+                }
+                if (contador < 4) {
+                    alert("no puede haber elementos vacios")
+                } else {
+                    document.getElementById(idsection2).scrollIntoView()
+                }
+
+            }
+
+        }
+
+        function EsUniversidadOBachiller() {
+            var contador = 0;
+            for (let i = 0; i < document.getElementById('section2').getElementsByTagName('input').length; i++) {
+                if (document.getElementById('section2').getElementsByTagName('input')[i].checked) {
+                    contador++
+                }
+            }
+            if (contador < 1) {
+                alert("debes elegir una de las opciones")
+            } else {
+                for (let i = 0; i < document.getElementById('section2').getElementsByTagName('input').length; i++) {
+                    if (document.getElementById('section2').getElementsByTagName('input')[i].checked) {
+                        if (document.getElementById('section2').getElementsByTagName('input')[i].value == "Universidad") {
+                            document.getElementById('section3').scrollIntoView()
+                        } else {
+                            document.getElementById('section4').scrollIntoView()
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+
+
+
+        function EsUniversidad() {
+            var contador = 0;
+
+            var uni = document.getElementById('universidades');
+            if (uni.options[uni.selectedIndex].value == "") {
+                alert("debes elegir una universidad")
+            } else {
+
+            }
+
+            for (let i = 0; i < document.getElementById('section3').getElementsByTagName('input').length; i++) {
+                if (document.getElementById('section3').getElementsByTagName('input')[i].checked) {
+                    contador++
+                }
+            }
+            if (contador < 1) {
+                alert("debes elegir una de las opciones")
+            } else {
+                for (let i = 0; i < document.getElementById('section3').getElementsByTagName('input').length; i++) {
+                    if (document.getElementById('section3').getElementsByTagName('input')[i].checked) {
+                        if (document.getElementById('section3').getElementsByTagName('input')[i].value == "Si") {
+                            if (uni.options[uni.selectedIndex].value != "") {
+                                document.getElementById('section5').scrollIntoView()
+                            }
+
+                        } else {
+                            if (uni.options[uni.selectedIndex].value != "") {
+                                document.getElementById('section5').scrollIntoView()
+                            }
+
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+
+
+        function EsBachiller() {
+            var contador = 0;
+
+            for (let i = 0; i < document.getElementById('section4').getElementsByTagName('input').length; i++) {
+                if (document.getElementById('section4').getElementsByTagName('input')[i].checked) {
+                    contador++
+                }
+            }
+            if (contador < 2) {
+                alert("Contesta todas las preguntas antes de continuar")
+            } else {
+
+                document.getElementById('section5').scrollIntoView()
+            }
+        }
+    </script>
+
+</head>
+
+
+<body>
+
+<form action="https://script.google.com/macros/s/AKfycby60SQJ8zPuVIAgyv8bGQyOmZIUJTKksCdtKRKHW5vrb7a-Q3fiN6DxVPmSPQsMl0n71g/exec"
+      method="post" id="encuesta" onsubmit="submitted=true;enviar.disabled=true;">
+    <div class="contenedor" style="">
+        <section id="section1">
+            <img src="https://misionadmision-assets.s3.amazonaws.com/img/website/logo-misionadmision.png"/>
+            <br>
+            <h2 style="color: white">
+                <strong>¡Hola!</strong>
+            </h2>
+            <br>
+            <h3 style="color: white;">Nos gustaría saber tu opinion</h3>
+            <br>
+            <h4 style="color: white;">¿Puedes responder nuestra breve encuesta?</h4>
+            <img class="figura"
+                 src="https://misionadmision-informacion.s3.us-west-2.amazonaws.com/backgrounds/ilustraciones/ilustracion2.png"
+                 width="600px"/>
+            <a class=" btn btn-primary btn-lg" style="background-color: #ff6167ff !important; border:none"
+               href="javascript:IrSeccion2()">¡Vamos!</a>
+
+        </section>
+
+
+
+        <section id="section2">
+
+            <img src="https://misionadmision-assets.s3.amazonaws.com/img/website/logo-misionadmision.png"/>
+            <br>
+
+            <h4 style="font-size: 2em;color: white" class=""> Estoy por ingresar a:</h4><br>
+            <div class="radiobtn">
+                <input type="radio" id="universidad" name="Estoy por ingresar a" style="display: inline-flex"
+                       value="Universidad" >
+                <label for="universidad">Universidad</label>
+            </div>
+            <div class="radiobtn">
+                <input type="radio" id="bachiller" name="Estoy por ingresar a" style="display: inline-flex"
+                       value="Bachillerato" >
+                <label for="bachiller">Bachillerato</label>
+            </div>
+
+
+            <img class="figura"
+                 src="https://misionadmision-informacion.s3.us-west-2.amazonaws.com/backgrounds/ilustraciones/ilustracion3.png"
+                 width="600px"/>
+            <a class=" btn btn-primary btn-lg" style="background-color: #ff6167ff !important; border:none"
+               href="javascript:EsUniversidadOBachiller()">Siguiente</a>
+
+
+        </section>
+
+        <section id="section3" class="">
+            <img src="https://misionadmision-assets.s3.amazonaws.com/img/website/logo-misionadmision.png"/>
+            <br>
+            <br>
+            <h4 style="color: white; text-align: center;" id="universidadIngresar">¿A qué Universidad deseas
+                ingresar?</h4>
+            <br>
+
+            <select type="text" name="¿A qué Universidad deseas ingresar?" id="universidades" class="selectItem" >
+                <option value="" selected>Ninguna</option>
+                <option value="Benemérita Escuela Normal Veracruzana">Benemérita Escuela Normal Veracruzana</option>
+                <option value="Escuela Normal SUperior">Escuela Normal Superior</option>
+                <option value="Universidad Veracruzana">Universidad Veracruzana</option>
+                <option value="Universidad Pedagógica Nacional">Universidad Pedagógica Nacional</option>
+                <option value="Instituto Tecnico Superior">Instituto Tecnico Superior</option>
+                <option value="Universidad Pedagógica Veracruzana">Universidad Pedagógica Veracruzana</option>
+                <option value="Universidad de Xalapa">Universidad de Xalapa</option>
+                <option value="Universidad Naval">Universidad Naval</option>
+                <option value="Benemérita Universidad Autónoma de Puebla">Benemérita Universidad Autónoma de Puebla</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <br>
+            <br>
+
+            <h4 style="color: white"> ¿¿Ya estás inscrito en algún curso propedéutico de ingreso a la Universidad o Bachillerato?</h4>
+            <br>
+
+            <div class="radiobtn">
+                <input type="radio" id="si-prope-uni" name="¿Ya estás inscrito en algún curso propedéutico de ingreso a la Universidad o Bachillerato??" value="Si">
+                <label for="si-prope-uni" style="min-width: 446px;"> Sí</label>
+            </div>
+            <div class="radiobtn">
+                <input type="radio" id="no-prope-uni" name="¿Ya estás inscrito en algún curso propedéutico de ingreso a la Universidad o Bachillerato?" style="display: inline-flex" value="No">
+                <label for="no-prope-uni" style="min-width: 446px;" > No</label>
+            </div>
+            <br>
+            <br>
+            <a class=" btn btn-primary btn-lg" style="background-color: #ff6167ff !important; border:none"
+               href="javascript:EsUniversidad()">Siguiente</a>
+
+
+        </section>
+
+
+        <section id="section4">
+            <img src="https://misionadmision-assets.s3.amazonaws.com/img/website/logo-misionadmision.png"/>
+            <br>
+            <br>
+            <h4 style="color: white; text-align: center;">¿A qué Bachillerato deseas ingresar?</h4>
+            <br>
+            <div class="radiobtn">
+                <input type="radio" id="publico" name="¿A qué Bachillerato deseas ingresar?" style="display: inline-flex"
+                       value="Publico DBG">
+                <label for="publico">Público DBG</label>
+            </div>
+            <div class="radiobtn">
+                <input type="radio" id="privado" name="¿A qué Bachillerato deseas ingresar?" style="display: inline-flex" value="Privado" >
+                <label for="privado">Privado</label>
+            </div>
+            <br>
+            <br>
+
+            <h4 style="color: white">¿Ya estás inscrito en algún curso propedéutico de ingreso a la Universidad o Bachillerato?</h4>
+            <br>
+
+            <div class="radiobtn">
+                <input type="radio" id="si" name="¿Ya estás inscrito en algún curso propedéutico de ingreso a la Universidad o Bachillerato?" style="display: inline-flex" value="Si"  >
+                <label for="si">Sí</label>
+            </div>
+            <div class="radiobtn">
+                <input type="radio" id="no" name="¿Ya estás inscrito en algún curso propedéutico de ingreso a la Universidad o Bachillerato?" style="display: inline-flex" value="No" >
+                <label for="no">No</label>
+            </div>
+            <br>
+            <br>
+            <a class=" btn btn-primary btn-lg" style="background-color: #ff6167ff !important; border:none"
+               href="javascript:EsBachiller()">Siguiente</a>
+        </section>
+
+        <section id="section5">
+            <br>
+            <img src="https://misionadmision-assets.s3.amazonaws.com/img/website/logo-misionadmision.png"
+                 style="margin-top: 250px" id="logoMa2"/>
+            <br>
+            <h4>¿Qué redes sociales usas con <strong>MAYOR</strong> frecuencia?</h4>
+            <br>
+            <h5>Uso siempre</h5>
+            <br>
+            <div class="radio-buttons">
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Uso siempre:]" value="Facebook"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-facebook"></i>
+              <h3>Facebook</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Uso siempre:]" value="Instagram"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-instagram"></i>
+              <h3>Instagram</h3>
+            </div>
+          </span>
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Uso siempre:]" value="TikTok"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              <h3>TikTok</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Uso siempre:]" value="Youtube"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-youtube"></i>
+              <h3>Youtube</h3>
+            </div>
+          </span>
+                </label>
+
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Uso siempre:]" value="Whatsapp"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-whatsapp"></i>
+              <h3>Whatsapp</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Uso siempre:]" value="Discord"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-discord"></i>
+              <h3>Discord</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Uso siempre:]" value="Twitch"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+             <i class="fa-brands fa-twitch"></i>
+              <h3>Twitch</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Uso siempre:]" value="Otra"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="las la-ellipsis-h"></i>
+              <h3>Otra</h3>
+            </div>
+          </span>
+                </label>
+
+            </div>
+            <br>
+            <h5>También uso con frecuencia</h5>
+            <br>
+            <div class="radio-buttons">
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [También uso con frecuencia:]" value="Facebook"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-facebook"></i>
+              <h3>Facebook</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [También uso con frecuencia:]" value="Instagram"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-instagram"></i>
+              <h3>Instagram</h3>
+            </div>
+          </span>
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [También uso con frecuencia:]" value="TikTok"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              <h3>TikTok</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [También uso con frecuencia:]" value="Youtube"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-youtube"></i>
+              <h3>Youtube</h3>
+            </div>
+          </span>
+                </label>
+
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [También uso con frecuencia:]" value="Whatsapp"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-whatsapp"></i>
+              <h3>Whatsapp</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [También uso con frecuencia:]" value="Discord"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-discord"></i>
+              <h3>Discord</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [También uso con frecuencia:]" value="Twitch"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+             <i class="fa-brands fa-twitch"></i>
+              <h3>Twitch</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [También uso con frecuencia:]" value="Otra"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="las la-ellipsis-h"></i>
+              <h3>Otra</h3>
+            </div>
+          </span>
+                </label>
+
+            </div>
+            <br>
+            <h5>A veces uso:</h5>
+            <br>
+            <div class="radio-buttons">
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [A veces uso:]" value="Facebook"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-facebook"></i>
+              <h3>Facebook</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [A veces uso:]" value="Instagram"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-instagram"></i>
+              <h3>Instagram</h3>
+            </div>
+          </span>
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [A veces uso:]" value="Tiktok"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              <h3>TikTok</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [A veces uso:]" value="Youtube"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-youtube"></i>
+              <h3>Youtube</h3>
+            </div>
+          </span>
+                </label>
+
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [A veces uso:]" value="Whatsapp"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-whatsapp"></i>
+              <h3>Whatsapp</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [A veces uso:]" value="Discord"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-discord"></i>
+              <h3>Discord</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [A veces uso:]" value="Twitch"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+             <i class="fa-brands fa-twitch"></i>
+              <h3>Twitch</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [A veces uso:]" value="Otra"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="las la-ellipsis-h"></i>
+              <h3>Otra</h3>
+            </div>
+          </span>
+                </label>
+
+            </div>
+            <br>
+            <h5>Nunca uso:</h5>
+            <br>
+            <div class="radio-buttons">
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Nunca uso:]" value="Facebook"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-facebook"></i>
+              <h3>Facebook</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Nunca uso:]" value="Instagram"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-instagram"></i>
+              <h3>Instagram</h3>
+            </div>
+          </span>
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Nunca uso:]" value="TikTok"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              <h3>TikTok</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Nunca uso:]" value="Youtube"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-youtube"></i>
+              <h3>Youtube</h3>
+            </div>
+          </span>
+                </label>
+
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Nunca uso:]" value="Whatsapp"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-whatsapp"></i>
+              <h3>whatsapp</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Nunca uso:]" value="Discord"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-discord"></i>
+              <h3>Discord</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Nunca uso:]" value="Twitch"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+             <i class="fa-brands fa-twitch"></i>
+              <h3>Twitch</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué redes sociales usas con MAYOR frecuencia? [Nunca uso:]" value="Otra"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="las la-ellipsis-h"></i>
+              <h3>Otra</h3>
+            </div>
+          </span>
+                </label>
+
+            </div>
+
+            <a class=" btn btn-primary btn-lg"
+               style="background-color: #ff6167ff !important; border:none; margin-bottom: 30px"
+               href="javascript:scrolling('section5','section6')">Siguiente</a>
+
+        </section>
+
+
+
+
+        <section id="section6">
+            <br>
+            <img src="https://misionadmision-assets.s3.amazonaws.com/img/website/logo-misionadmision.png"
+                 style="margin-top: 250px" id="logoMa1"/>
+            <br>
+            <h4>¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de <strong>PRIORIDAD.</strong></h4>
+            <br>
+            <h5>Siempre visito</h5>
+            <br>
+            <div class="radio-buttons">
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Siempre visito:]" value="Facebook"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-facebook"></i>
+              <h3>Facebook</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Siempre visito:]" value="TikTok"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              <h3>TikTok</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Siempre visito:]" value="Youtube"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-youtube"></i>
+              <h3>Youtube</h3>
+            </div>
+          </span>
+                </label>
+
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Siempre visito:]" value="Google"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-google"></i>
+              <h3>Google</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Siempre visito:]" value="Twitch"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+             <i class="fa-brands fa-twitch"></i>
+              <h3>Twitch</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Siempre visito:]" value="Otra"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="las la-ellipsis-h"></i>
+              <h3>Otra</h3>
+            </div>
+          </span>
+                </label>
+
+            </div>
+            <br>
+            <h5>Visito con frecuencia</h5>
+            <br>
+            <div class="radio-buttons">
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Visito con frecuencia:]" value="Facebook"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-facebook"></i>
+              <h3>Facebook</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Visito con frecuencia:]" value="TikTok"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              <h3>TikTok</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Visito con frecuencia:]" value="Youtube"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-youtube"></i>
+              <h3>Youtube</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Visito con frecuencia:]" value="Google"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-google"></i>
+              <h3>Google</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Visito con frecuencia:]" value="Twitch"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+             <i class="fa-brands fa-twitch"></i>
+              <h3>Twitch</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Visito con frecuencia:]" value="Otra"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="las la-ellipsis-h"></i>
+              <h3>Otra</h3>
+            </div>
+          </span>
+                </label>
+
+            </div>
+            <br>
+            <h5>A veces uso:</h5>
+            <br>
+            <div class="radio-buttons">
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [A veces uso:]" value="Facebook"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-facebook"></i>
+              <h3>Facebook</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [A veces uso:]" value="Tiktok"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              <h3>TikTok</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [A veces uso:]" value="Youtube"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-youtube"></i>
+              <h3>Youtube</h3>
+            </div>
+          </span>
+                </label>
+
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [A veces uso:]" value="Google"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-google"></i>
+              <h3>Google</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [A veces uso:]" value="Twitch"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+             <i class="fa-brands fa-twitch"></i>
+              <h3>Twitch</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [A veces uso:]" value="Otra"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="las la-ellipsis-h"></i>
+              <h3>Otra</h3>
+            </div>
+          </span>
+                </label>
+
+            </div>
+            <br>
+            <h5>Nunca la uso para aprender:</h5>
+            <br>
+            <div class="radio-buttons">
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Nunca la uso para aprender:]" value="Facebook"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-facebook"></i>
+              <h3>Facebook</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Nunca la uso para aprender:]" value="TikTok"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              <h3>TikTok</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Nunca la uso para aprender:]" value="Youtube"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-youtube"></i>
+              <h3>Youtube</h3>
+            </div>
+          </span>
+                </label>
+
+
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Nunca la uso para aprender:]" value="Google"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="fa-brands fa-google"></i>
+              <h3>Google</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Nunca la uso para aprender:]" value="Twitch"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+             <i class="fa-brands fa-twitch"></i>
+              <h3>Twitch</h3>
+            </div>
+          </span>
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="¿Qué sitios de internet sueles visitar para aprender algo nuevo? Selecciona CUATRO opciones en orden de PRIORIDAD. [Nunca la uso para aprender:]" value="Otra"/>
+                    <span class="radio-btn"
+                    >
+            <div class="hobbies-icon">
+              <i class="las la-ellipsis-h"></i>
+              <h3>Otra</h3>
+            </div>
+          </span>
+                </label>
+
+            </div>
+
+            <a class=" btn btn-primary btn-lg"
+               style="background-color: #ff6167ff !important; border:none; margin-bottom: 30px"
+               href="javascript:scrolling('section6','section7')">Siguiente</a>
+
+
+        </section>
+
+        <section id="section7">
+            <br>
+            <br>
+            <img src="https://misionadmision-assets.s3.amazonaws.com/img/website/logo-misionadmision.png" id="logoMa4"/>
+            <br>
+                <h4>¿Qué es lo que más disfrutas de aprender algo nuevo?"</h4>
+            <br>
+
+            <textarea name="¿Qué es lo que más disfrutas de aprender algo nuevo?" form="encuesta" placeholder="Escribe tu respuesta" required="true"></textarea>
+            <br>
+                <h4>¿Qué es lo que menos disfrutas de aprender algo nuevo?</h4>
+            <br>
+            <textarea name="¿Qué es lo que menos disfrutas de aprender algo nuevo?" form="encuesta" placeholder="Escribe tu respuesta" required="true"></textarea>
+            <br>
+            <h4>Cuando estás aprendiendo algo nuevo, ¿qué es lo que más te motiva a seguir?</h4>
+            <br>
+            <textarea name="Cuando estás aprendiendo algo nuevo, ¿qué es lo que más te motiva a seguir?" form="encuesta" placeholder="Escribe tu respuesta" required="true"></textarea>
+            <br>
+            <h4>
+                Cuando estás aprendiendo algo nuevo, ¿qué es lo que te desmotiva para seguir?
+            </h4>
+            <br>
+            <textarea name="Cuando estás aprendiendo algo nuevo, ¿qué es lo que te desmotiva para seguir?" form="encuesta" placeholder="Escribe tu respuesta" required="true"></textarea>
+            <br>
+            <button type="submit" class="btn btn-primary" name="enviar" style="margin-bottom: 30px">Terminar encuesta</button>
+        </section>
+
+
+    </div>
+
+</form>
+<script>
+    window.addEventListener("load", function() {
+        const form = document.getElementById('encuesta');
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            const action = e.target.action;
+            fetch(action, {
+                method: 'POST',
+                body: data,
+            })
+                .then(() => {
+                    window.location.replace('gracias.html');
+                })
+        });
+    });
+
+</script>
+</body>
+</html>
